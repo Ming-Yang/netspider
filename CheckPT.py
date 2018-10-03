@@ -34,28 +34,29 @@ def FindTorrentNpu(name):
 	}
 
 	z = requests.get(url=requests_url,headers=requests_headers,params=requests_para)
+	content = z.content.decode('utf-8')
 	# temp = open('temp.txt',mode='w')
-	# temp.write(z.text)
-	num = re.findall(pattern='找到(.*?)条结果',string=z.text)[0]
+	# temp.write(content)
+	num = re.findall(pattern='找到(.*?)条结果',string=content)[0]
 	counts = int(num)
 
 	if os.path.exists(filename):
-		fd = open(filename,mode='r+')
+		fd = open(filename,mode='r+',encoding='UTF-8')
 		if counts > int(fd.readline()):
 			fd.close()	
-			fd = open(filename,mode='w')
+			fd = open(filename,mode='w',encoding='UTF-8')
 			fd.write(num+"\n")
-			torrents_list = re.findall(pattern='<td class="rowfollow th-fat"><table class="torrentname" width="100%"><tr><td class="embedded"><a title="(.*?)" href',string=z.text)
-			torrents_chinese_list = re.findall(pattern='<small></small><span title=\'(.*?)\'><br />',string=z.text)
+			torrents_list = re.findall(pattern='<td class="rowfollow th-fat"><table class="torrentname" width="100%"><tr><td class="embedded"><a title="(.*?)" href',string=content)
+			torrents_chinese_list = re.findall(pattern='<small></small><span title=\'(.*?)\'><br />',string=content)
 			for (torrent,torrent_chinese) in zip_longest(torrents_list,torrents_chinese_list):
 				fd.write(torrent+'\n'+str(torrent_chinese)+'\n\n')
 			fd.close()	
 			return True
 	else:
-		fd = open(filename,mode='w')
+		fd = open(filename,mode='w',encoding='UTF-8')
 		fd.write(num+"\n")
-		torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)" href',string=z.text)
-		torrents_chinese_list = re.findall(pattern='<small></small><span title=\'(.*?)\'><br />',string=z.text)
+		torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)" href',string=content)
+		torrents_chinese_list = re.findall(pattern='<small></small><span title=\'(.*?)\'><br />',string=content)
 		for (torrent,torrent_chinese) in zip_longest(torrents_list,torrents_chinese_list):
 			fd.write(torrent+'\n'+str(torrent_chinese)+'\n\n')
 		fd.close()		
@@ -90,28 +91,29 @@ def FindTorrentByr(name):
 	}
 
 	z = requests.get(url=requests_url,headers=requests_headers,params=requests_para)
+	content = z.content.decode('utf-8')
 	# temp = open(sys.path[0]+'/logs/temp.txt',mode='w')
-	# temp.write(z.text)
-	num = re.findall(pattern='&nbsp;-&nbsp;(.*?)</b></font></p>',string=z.text)[0]
+	# temp.write(content)
+	num = re.findall(pattern='&nbsp;-&nbsp;(.*?)</b></font></p>',string=content)[0]
 	counts = int(num)
 
 	if os.path.exists(filename):
-		fd = open(filename,mode='r+')
+		fd = open(filename,mode='r+',encoding='UTF-8')
 		if counts > int(fd.readline()):
 			fd.close()	
-			fd = open(filename,mode='w')
+			fd = open(filename,mode='w',encoding='UTF-8')
 			fd.write(num+"\n")
-			torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)"  href',string=z.text)
-			torrents_chinese_list = re.findall(pattern='</font>]</b><br />(.*?) </td>',string=z.text)
+			torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)"  href',string=content)
+			torrents_chinese_list = re.findall(pattern='</font>]</b><br />(.*?) </td>',string=content)
 			for (torrent,torrent_chinese) in zip_longest(torrents_list,torrents_chinese_list):
 				fd.write(torrent+'\n'+str(torrent_chinese)+'\n\n')
 			fd.close()	
 			return True
 	else:
-		fd = open(filename,mode='w')
+		fd = open(filename,mode='w',encoding='UTF-8')
 		fd.write(num+"\n")
-		torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)"  href',string=z.text)
-		torrents_chinese_list = re.findall(pattern='</font>]</b><br />(.*?) </td>',string=z.text)
+		torrents_list = re.findall(pattern='<td class="embedded"><a title="(.*?)"  href',string=content)
+		torrents_chinese_list = re.findall(pattern='</font>]</b><br />(.*?) </td>',string=content)
 		for (torrent,torrent_chinese) in zip_longest(torrents_list,torrents_chinese_list):
 			fd.write(torrent+'\n'+str(torrent_chinese)+'\n\n')
 		fd.close()		
@@ -133,7 +135,7 @@ def SendEmail(name,e_addr='379614985@qq.com'):
 	refresh_npu = refresh_byr = False
 	if FindTorrentNpu(name) == True :
 		filename = sys.path[0]+'/logs/'+name+'_npupt.txt'
-		fd = open(filename,mode='r')
+		fd = open(filename,mode='r',encoding='UTF-8')
 		num = fd.readline()
 		num = num.strip('\n')
 		contex_npu = '\"'+name+'\" 蒲公英PT上一共有'+num+'个搜索结果\n\n'
@@ -142,7 +144,7 @@ def SendEmail(name,e_addr='379614985@qq.com'):
 
 	if FindTorrentByr(name) == True:
 		filename = sys.path[0]+'/logs/'+name+'_byrpt.txt'
-		fd = open(filename,mode='r')
+		fd = open(filename,mode='r',encoding='UTF-8')
 		num = fd.readline()
 		num = num.strip('\n')
 		contex_byr = '\"'+name+'\" 北邮人PT上一共有'+num+'个搜索结果\n\n'
