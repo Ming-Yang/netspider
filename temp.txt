@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">    
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="csrf-token" content="c780e7397cae51fa6252292ef089e0d3" />
+<meta name="keywords" content="BT 北邮" />
+<meta name="description" content="北邮人BT" />
+<meta name="generator" content="NexusPHP" />
+<title>BYRBT :: 搜索结果 - office 2016 - Powered by NexusPHP</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="search" type="application/opensearchdescription+xml" title="BYRBT Torrents" href="opensearch.php" />
+<link rel="stylesheet" href="styles/mediumfont.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="styles/sprites.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="pic/forum_pic/chs/forumsprites.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="styles/BambooGreen/theme.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="styles/BambooGreen/DomTT.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="styles/curtain_imageresizer.css?201512240000" type="text/css" />
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.21.custom.css" type="text/css" />
+<link rel="stylesheet" href="css/boot-badges.css" type="text/css" />
+<link rel="stylesheet" href="css/miza.css" type="text/css" />
+<link rel="stylesheet" href="css/flipclock.css" type="text/css" />
+<link rel="stylesheet" href="pic/category/chd/scenetorrents/catsprites.css?201512240000" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="Latest Torrents" href="torrentrss.php" />
+
+<script type="text/javascript" src="curtain_imageresizer.js?201512240000"></script>
+<script type="text/javascript" src="ajaxbasic.js?201512240000"></script>
+<script type="text/javascript" src="common.js?201512240000"></script>
+<script type="text/javascript" src="domLib.js?201512240000"></script>
+<script type="text/javascript" src="domTT.js?201512240000"></script>
+<script type="text/javascript" src="domTT_drag.js?201512240000"></script>
+<script type="text/javascript" src="fadomatic.js?201512240000"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+<script type="text/javascript" src="js/flipclock.min.js"></script>
+<!--改过 -->
+    <script type="text/javascript">
+        /*
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2276167-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+         */
+
+    </script>
+<style>
+    #back-to-top{   
+        position:fixed;
+        bottom:50px;
+        right:60px;
+        display:none;
+    }
+
+    #back-to-top a{
+        text-align:center;
+        text-decoration:none;
+        color:#d1d1d1;
+        display:block;
+        width:80px;
+        /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+        -moz-transition:color 1s; 
+        -webkit-transition:color 1s;
+        -o-transition:color 1s;
+    }
+    #back-to-top a:hover{
+        color:#979797;
+    }
+    #back-to-top a span{
+        background:#d1d1d1;
+        border-radius:6px;
+        display:block;
+        height:80px;
+        width:80px;
+        background:#d1d1d1 url(pic/arrow-up.png) no-repeat center center;
+        margin-bottom:5px;
+        -moz-transition:background 1s;
+        -webkit-transition:background 1s;
+        -o-transition:background 1s;
+    }
+    #back-to-top a:hover span{
+        background:#979797 url(pic/arrow-up.png) no-repeat center center;
+        }
+</style>
+<div style="margin:-6px auto 0; width:480px;">
+    <div class="BYRBT-clock"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //首先将#back-to-top隐藏
+        $("#back-to-top").hide();
+        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+        $(function () {
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>100){
+                    $("#back-to-top").fadeIn(700);
+                }
+                else
+                {
+                    $("#back-to-top").fadeOut(700);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function(){
+                $('body,html').animate({scrollTop:0},1000);
+                return false;
+            });
+            $('table.head').css({'cursor':'pointer'});
+            $('table.head').click(function(){
+                //window.open("https://bbs.byr.cn/#!article/Picture/3221269");
+                window.location.href="https://bbs.byr.cn/#!article/Picture/3221269";
+            });
+        });
+
+        $('#task_progress').qtip({
+            position:{
+                corner:{
+                    target:'bottomMiddle',
+                    tooltip:'topMiddle'
+                },
+                adjust:{
+                    screen:true
+                }
+            },
+            show:{
+                when: 'click',
+                solo:true
+            },
+            hide: 'unfocus',
+            style:{
+                tip:true,
+                border:{
+                    width:0,
+                    radius:4
+                },
+                width:400
+            },
+            content:{
+                url:'task_progress.php',
+                title : {
+                    text : '活动详情',
+                    button : 'x'
+                }
+            }
+        });
+
+    });
+
+</script>
+
+
+
+</head>
+<body id="top">
+<p id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
+<table class="head" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+        <td class="clear">
+            <div class="logo"><a href="http://tv.byr.cn"><font color="blue"></a></font></div>
+            <div class="slogan"></div>
+        </td>
+        <td class="clear nowrap" align="right" valign="middle">
+        </td>
+    </tr>
+</table>
+
+<table class="mainouter" width="100%" cellspacing="0" cellpadding="5" align="center">
+    <tr><td id="nav_block" class="text" align="center">
+<table class="main" width="1150" border="0" cellspacing="0" cellpadding="0"><tr><td class="embedded" ><div id="nav"><ul id="mainmenu" class="menu" style="padding:0px"><li><a href="index.php">&nbsp;首&nbsp;&nbsp;页&nbsp;</a></li><li><a href="forums.php">&nbsp;论&nbsp;&nbsp;坛&nbsp;</a></li><li class="selected"><a href="torrents.php">&nbsp;种&nbsp;&nbsp;子&nbsp;</a></li><li><a href="jc_currentbet_L.php">&nbsp;竞&nbsp;&nbsp;猜&nbsp;</a></li><li><a href="offers.php">&nbsp;候&nbsp;&nbsp;选&nbsp;</a></li><li><a href="upload.php">&nbsp;发&nbsp;&nbsp;布&nbsp;</a></li><li><a href="viewrequests.php">&nbsp;求&nbsp;&nbsp;种&nbsp;</a></li><li><a href="subtitles.php">&nbsp;字&nbsp;&nbsp;幕&nbsp;</a></li><li><a href="usercp.php">&nbsp;控制面板&nbsp;</a></li><li><a href="topten.php">排&nbsp;行&nbsp;榜</a></li><li><a href="log.php">&nbsp;日&nbsp;&nbsp;志&nbsp;</a></li><li><a href="rules.php">&nbsp;规&nbsp;&nbsp;则&nbsp;</a></li><li><a href="faq.php">&nbsp;常见问题&nbsp;</a></li><li><a href="staff.php">管&nbsp;理&nbsp;组</a></li><li><a href="badges.php">&nbsp;徽&nbsp;&nbsp;章&nbsp;</a></li><li><a href="banner_show.php">&nbsp;设&nbsp;&nbsp;计&nbsp;</a></li></ul></div></td></tr></table>
+
+<table id="info_block" cellpadding="4" cellspacing="0" border="0" width="100%"><tr>
+    <td><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
+    <td class="bottom" align="left"><span class="medium">欢迎, <span class="nowrap"><a  href="userdetails.php?id=276702" class='CrazyUser_Name'><b>HarryMing</b></a></span> 
+
+[<a href="logout.php?key=646ca397654c5bbdec5ccc57e99dbe8d">退出</a>]  [<a href="torrents.php?inclbookmarked=1&amp;allsec=1&amp;incldead=0">收藏</a>] <font class = 'color_bonus'>魔力值 </font>[<a href="mybonus.php">使用</a>]: 87,502.3 <font class = 'color_invite'>邀请 </font>[<a href="invite.php?id=276702">发送</a>]: 6<font class = 'color_bonus'>&nbsp;上传排行:</font>&nbsp;31939<br />
+
+
+<font class="color_ratio">分享率：</font> 370.470  <font class='color_uploaded'>上传量：</font> 1.570 TB<font class='color_downloaded'> 下载量：</font> 4.34 GB  <font class='color_active'>当前活动：</font> <img class="arrowup" alt="Torrents seeding" title="当前做种" src="pic/trans.gif" />35  <img class="arrowdown" alt="Torrents leeching" title="当前下载" src="pic/trans.gif" />0&nbsp;&nbsp;<font class='color_connectable'>可连接：</font><b><font color="green">是</font></b> <font class='color_slots'>连接数：</font>无限制<a href="#" id="task_progress"><b> &nbsp; 任务进度</b></a></span></td>
+
+    <td class="bottom" align="right"><span class="medium">当前时间：17:34<br />
+
+<a href="messages.php"><img class="inbox" src="pic/trans.gif" alt="inbox" title="收件箱&nbsp;(无新短讯)" /></a> 4 (0 新)  <a href="messages.php?action=viewmailbox&amp;box=-1"><img class="sentbox" alt="sentbox" title="发件箱" src="pic/trans.gif" /></a> 0 <a href="friends.php"><img class="buddylist" alt="Buddylist" title="社交名单" src="pic/trans.gif" /></a> <a href="getrss.php"><img class="rss" alt="RSS" title="获取RSS" src="pic/trans.gif" /></a>
+    </span></td>
+    </tr></table></td>
+</tr></table>
+
+</td></tr>
+
+<tr><td id="outer" align="center" class="outer" style="padding-top: 20px; padding-bottom: 20px">
+<table width="1150" class="main" border="0" cellspacing="0" cellpadding="0"><tr><td class="embedded"><script>(function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;js.src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js";stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');</script>
+
+<form method="get" name="searchbox" action="?">
+    <table border="1" class="searchbox" cellspacing="0" cellpadding="5" width="100%">
+        <tbody>
+        <tr>
+        <td class="colhead" align="center" colspan="2"><a href="javascript: klappe_news('searchboxmain')"><img class="minus" src="pic/trans.gif" id="picsearchboxmain" alt="Show/Hide" />搜索箱</a></td>
+        </tr></tbody>
+        <tbody id="ksearchboxmain">     <tr>
+            <td class="rowfollow" align="left">
+                <table style="width:100%;position:relative">
+                    <td style="border:0px" ><tr class="embedded" colspan="10" align="left"><b>类型:</b></tr></td><td style="border:0px"><input  checked="checked"  type="hidden" name="secocat" value=><input  checked="checked"  type="hidden" name="cat" value=><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat408" name="cat408" value="1" /><a href="?cat=408" onmouseover="cat_show1('m0')" onmouseout="cat_hide('m0')"><img class="c_movies" src="pic/cattrans.gif" alt="电影" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m0" class="cat" onmouseover="cat_show2('m0')" onmouseout="cat_hide('m0')"><a class="acat" id="110" onmouseenter="cat_change(110)" onmouseleave="cat_nochange(110)" href=?cat=408&secocat=11><img src="left.png" width="15" height="15">华语<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="110"></a><a class="acat" id="120" onmouseenter="cat_change(120)" onmouseleave="cat_nochange(120)" href=?cat=408&secocat=12><img src="left.png" width="15" height="15">欧洲<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="120"></a><a class="acat" id="130" onmouseenter="cat_change(130)" onmouseleave="cat_nochange(130)" href=?cat=408&secocat=13><img src="left.png" width="15" height="15">北美<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="130"></a><a class="acat" id="140" onmouseenter="cat_change(140)" onmouseleave="cat_nochange(140)" href=?cat=408&secocat=14><img src="left.png" width="15" height="15">亚洲<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="140"></a><a class="acat" id="10" onmouseenter="cat_change(10)" onmouseleave="cat_nochange(10)" href=?cat=408&secocat=1><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="10"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat401" name="cat401" value="1" /><a href="?cat=401" onmouseover="cat_show1('m1')" onmouseout="cat_hide('m1')"><img class="c_tvseries" src="pic/cattrans.gif" alt="剧集" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m1" class="cat" onmouseover="cat_show2('m1')" onmouseout="cat_hide('m1')"><a class="acat" id="151" onmouseenter="cat_change(151)" onmouseleave="cat_nochange(151)" href=?cat=401&secocat=15><img src="left.png" width="15" height="15">大陆<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="151"></a><a class="acat" id="161" onmouseenter="cat_change(161)" onmouseleave="cat_nochange(161)" href=?cat=401&secocat=16><img src="left.png" width="15" height="15">日韩<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="161"></a><a class="acat" id="171" onmouseenter="cat_change(171)" onmouseleave="cat_nochange(171)" href=?cat=401&secocat=17><img src="left.png" width="15" height="15">欧美<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="171"></a><a class="acat" id="181" onmouseenter="cat_change(181)" onmouseleave="cat_nochange(181)" href=?cat=401&secocat=18><img src="left.png" width="15" height="15">港台<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="181"></a><a class="acat" id="21" onmouseenter="cat_change(21)" onmouseleave="cat_nochange(21)" href=?cat=401&secocat=2><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="21"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat404" name="cat404" value="1" /><a href="?cat=404" onmouseover="cat_show1('m2')" onmouseout="cat_hide('m2')"><img class="c_animes" src="pic/cattrans.gif" alt="动漫" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m2" class="cat" onmouseover="cat_show2('m2')" onmouseout="cat_hide('m2')"><a class="acat" id="192" onmouseenter="cat_change(192)" onmouseleave="cat_nochange(192)" href=?cat=404&secocat=19><img src="left.png" width="15" height="15">动画<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="192"></a><a class="acat" id="202" onmouseenter="cat_change(202)" onmouseleave="cat_nochange(202)" href=?cat=404&secocat=20><img src="left.png" width="15" height="15">漫画<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="202"></a><a class="acat" id="212" onmouseenter="cat_change(212)" onmouseleave="cat_nochange(212)" href=?cat=404&secocat=21><img src="left.png" width="15" height="15">音乐<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="212"></a><a class="acat" id="222" onmouseenter="cat_change(222)" onmouseleave="cat_nochange(222)" href=?cat=404&secocat=22><img src="left.png" width="15" height="15">周边<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="222"></a><a class="acat" id="32" onmouseenter="cat_change(32)" onmouseleave="cat_nochange(32)" href=?cat=404&secocat=3><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="32"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat402" name="cat402" value="1" /><a href="?cat=402" onmouseover="cat_show1('m3')" onmouseout="cat_hide('m3')"><img class="c_musics" src="pic/cattrans.gif" alt="音乐" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m3" class="cat" onmouseover="cat_show2('m3')" onmouseout="cat_hide('m3')"><a class="acat" id="233" onmouseenter="cat_change(233)" onmouseleave="cat_nochange(233)" href=?cat=402&secocat=23><img src="left.png" width="15" height="15">大陆<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="233"></a><a class="acat" id="243" onmouseenter="cat_change(243)" onmouseleave="cat_nochange(243)" href=?cat=402&secocat=24><img src="left.png" width="15" height="15">港台<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="243"></a><a class="acat" id="253" onmouseenter="cat_change(253)" onmouseleave="cat_nochange(253)" href=?cat=402&secocat=25><img src="left.png" width="15" height="15">日韩<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="253"></a><a class="acat" id="263" onmouseenter="cat_change(263)" onmouseleave="cat_nochange(263)" href=?cat=402&secocat=26><img src="left.png" width="15" height="15">欧美<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="263"></a><a class="acat" id="43" onmouseenter="cat_change(43)" onmouseleave="cat_nochange(43)" href=?cat=402&secocat=4><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="43"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat405" name="cat405" value="1" /><a href="?cat=405" onmouseover="cat_show1('m4')" onmouseout="cat_hide('m4')"><img class="c_arts" src="pic/cattrans.gif" alt="综艺" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m4" class="cat" onmouseover="cat_show2('m4')" onmouseout="cat_hide('m4')"><a class="acat" id="274" onmouseenter="cat_change(274)" onmouseleave="cat_nochange(274)" href=?cat=405&secocat=27><img src="left.png" width="15" height="15">大陆<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="274"></a><a class="acat" id="284" onmouseenter="cat_change(284)" onmouseleave="cat_nochange(284)" href=?cat=405&secocat=28><img src="left.png" width="15" height="15">日韩<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="284"></a><a class="acat" id="294" onmouseenter="cat_change(294)" onmouseleave="cat_nochange(294)" href=?cat=405&secocat=29><img src="left.png" width="15" height="15">港台<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="294"></a><a class="acat" id="304" onmouseenter="cat_change(304)" onmouseleave="cat_nochange(304)" href=?cat=405&secocat=30><img src="left.png" width="15" height="15">欧美<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="304"></a><a class="acat" id="54" onmouseenter="cat_change(54)" onmouseleave="cat_nochange(54)" href=?cat=405&secocat=5><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="54"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat403" name="cat403" value="1" /><a href="?cat=403" onmouseover="cat_show1('m5')" onmouseout="cat_hide('m5')"><img class="c_games" src="pic/cattrans.gif" alt="游戏" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m5" class="cat" onmouseover="cat_show2('m5')" onmouseout="cat_hide('m5')"><a class="acat" id="315" onmouseenter="cat_change(315)" onmouseleave="cat_nochange(315)" href=?cat=403&secocat=31><img src="left.png" width="15" height="15">PC<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="315"></a><a class="acat" id="325" onmouseenter="cat_change(325)" onmouseleave="cat_nochange(325)" href=?cat=403&secocat=32><img src="left.png" width="15" height="15">主机<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="325"></a><a class="acat" id="335" onmouseenter="cat_change(335)" onmouseleave="cat_nochange(335)" href=?cat=403&secocat=33><img src="left.png" width="15" height="15">移动<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="335"></a><a class="acat" id="345" onmouseenter="cat_change(345)" onmouseleave="cat_nochange(345)" href=?cat=403&secocat=34><img src="left.png" width="15" height="15">掌机<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="345"></a><a class="acat" id="355" onmouseenter="cat_change(355)" onmouseleave="cat_nochange(355)" href=?cat=403&secocat=35><img src="left.png" width="15" height="15">视频<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="355"></a><a class="acat" id="65" onmouseenter="cat_change(65)" onmouseleave="cat_nochange(65)" href=?cat=403&secocat=6><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="65"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat406" name="cat406" value="1" /><a href="?cat=406" onmouseover="cat_show1('m6')" onmouseout="cat_hide('m6')"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m6" class="cat" onmouseover="cat_show2('m6')" onmouseout="cat_hide('m6')"><a class="acat" id="366" onmouseenter="cat_change(366)" onmouseleave="cat_nochange(366)" href=?cat=406&secocat=36><img src="left.png" width="15" height="15">Windows<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="366"></a><a class="acat" id="376" onmouseenter="cat_change(376)" onmouseleave="cat_nochange(376)" href=?cat=406&secocat=37><img src="left.png" width="15" height="15">OSX<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="376"></a><a class="acat" id="386" onmouseenter="cat_change(386)" onmouseleave="cat_nochange(386)" href=?cat=406&secocat=38><img src="left.png" width="15" height="15">Linux<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="386"></a><a class="acat" id="396" onmouseenter="cat_change(396)" onmouseleave="cat_nochange(396)" href=?cat=406&secocat=39><img src="left.png" width="15" height="15">Android<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="396"></a><a class="acat" id="406" onmouseenter="cat_change(406)" onmouseleave="cat_nochange(406)" href=?cat=406&secocat=40><img src="left.png" width="15" height="15">iOS<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="406"></a><a class="acat" id="76" onmouseenter="cat_change(76)" onmouseleave="cat_nochange(76)" href=?cat=406&secocat=7><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="76"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat407" name="cat407" value="1" /><a href="?cat=407" onmouseover="cat_show1('m7')" onmouseout="cat_hide('m7')"><img class="c_docs" src="pic/cattrans.gif" alt="资料" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m7" class="cat" onmouseover="cat_show2('m7')" onmouseout="cat_hide('m7')"><a class="acat" id="417" onmouseenter="cat_change(417)" onmouseleave="cat_nochange(417)" href=?cat=407&secocat=41><img src="left.png" width="15" height="15">公开课<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="417"></a><a class="acat" id="427" onmouseenter="cat_change(427)" onmouseleave="cat_nochange(427)" href=?cat=407&secocat=42><img src="left.png" width="15" height="15">出版物<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="427"></a><a class="acat" id="437" onmouseenter="cat_change(437)" onmouseleave="cat_nochange(437)" href=?cat=407&secocat=43><img src="left.png" width="15" height="15">学习教程<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="437"></a><a class="acat" id="447" onmouseenter="cat_change(447)" onmouseleave="cat_nochange(447)" href=?cat=407&secocat=44><img src="left.png" width="15" height="15">素材模板<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="447"></a><a class="acat" id="457" onmouseenter="cat_change(457)" onmouseleave="cat_nochange(457)" href=?cat=407&secocat=45><img src="left.png" width="15" height="15">演讲交流<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="457"></a><a class="acat" id="467" onmouseenter="cat_change(467)" onmouseleave="cat_nochange(467)" href=?cat=407&secocat=46><img src="left.png" width="15" height="15">生活娱乐<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="467"></a><a class="acat" id="87" onmouseenter="cat_change(87)" onmouseleave="cat_nochange(87)" href=?cat=407&secocat=8><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="87"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat409" name="cat409" value="1" /><a href="?cat=409" onmouseover="cat_show1('m8')" onmouseout="cat_hide('m8')"><img class="c_sports" src="pic/cattrans.gif" alt="体育" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m8" class="cat" onmouseover="cat_show2('m8')" onmouseout="cat_hide('m8')"><a class="acat" id="478" onmouseenter="cat_change(478)" onmouseleave="cat_nochange(478)" href=?cat=409&secocat=47><img src="left.png" width="15" height="15">篮球<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="478"></a><a class="acat" id="488" onmouseenter="cat_change(488)" onmouseleave="cat_nochange(488)" href=?cat=409&secocat=48><img src="left.png" width="15" height="15">足球<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="488"></a><a class="acat" id="498" onmouseenter="cat_change(498)" onmouseleave="cat_nochange(498)" href=?cat=409&secocat=49><img src="left.png" width="15" height="15">F1<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="498"></a><a class="acat" id="508" onmouseenter="cat_change(508)" onmouseleave="cat_nochange(508)" href=?cat=409&secocat=50><img src="left.png" width="15" height="15">网球<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="508"></a><a class="acat" id="98" onmouseenter="cat_change(98)" onmouseleave="cat_nochange(98)" href=?cat=409&secocat=9><img src="left.png" width="15" height="15">其他<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="98"></a></div></td><td style="border:0px; float:left; margin-left:6px;position:relative"><input type="checkbox" id="cat410" name="cat410" value="1" /><a href="?cat=410" onmouseover="cat_show1('m9')" onmouseout="cat_hide('m9')"><img class="c_records" src="pic/cattrans.gif" alt="纪录" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a><div id="m9" class="cat" onmouseover="cat_show2('m9')" onmouseout="cat_hide('m9')"><a class="acat" id="109" onmouseenter="cat_change(109)" onmouseleave="cat_nochange(109)" href=?cat=410&secocat=10><img src="left.png" width="15" height="15">纪录<img src="right.png" width="13" height="13" style="display:none;padding:0px 0px 0px 26px" id="109"></a></div></td><td colspan="2" class="bottom" align="left" style="padding-left: 15px"><input name="cat_check" value='全选' class="btn medium" type="button"   onclick="javascript:SetChecked('cat','cat_check','全选','全不选',-1,10)" /></td>
+<td align="left" class="bottom" style="padding-bottom: 4px; padding-left: 16px;"><a title="BYRHD" href="?search=BYRHD"><img src="pic/byrhd.png" width="55"></a></td>
+<td align="left" class="bottom" style="padding-bottom: 4px; padding-left: 10px;"><a title="BYRPAD" href="?search=BYRPAD"><img src="pic/byrpad.png" width="55"></a></td>
+<td align="left" class="bottom" style="padding-bottom: 4px; padding-left: 10px;"><a title="BYRTV" href="?search=BYRTV"><img src="pic/byrtv.png" width="55"></a></td>
+</tr>               </table>
+            </td>
+
+            <td class="rowfollow" valign="middle">
+                <table>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <font class="medium">显示断种/活种？</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <select class="med" name="incldead" style="width: 100px;">
+                                <option value="0">包括断种</option>
+                                <option value="1">活种 </option>
+                                <option value="2">断种</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <font class="medium">显示促销种子？</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <select class="med" name="spstate" style="width: 100px;">
+                                <option value="0">全部</option>
+<option value="1">普通</option><option value="2">免费</option><option value="3">2X</option><option value="4">2X免费</option><option value="5">50%</option><option value="6">2X 50%</option><option value="7">30%</option>                         </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <font class="medium">显示收藏？</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bottom" style="padding: 1px;padding-left: 10px">
+                            <select class="med" name="inclbookmarked" style="width: 100px;">
+                                <option value="0">全部</option>
+                                <option value="1">仅收藏</option>
+                                <option value="2">仅未收藏</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+        <tbody >
+        <tr>
+            <td class="rowfollow" align="center">
+                <table>
+                    <tr>
+                        <td class="embedded">
+                            搜索关键字:&nbsp;&nbsp;
+                        </td>
+                        <td class="embedded">
+                            <table>
+                                <tr>
+                                    <td class="embedded">
+                                        <input id="searchinput" x-webkit-speech lang="zh-CN" name="search" type="text" value="office 2016" autocomplete="off" style="width: 200px" ondblclick="suggest(event.keyCode,this.value);" onkeyup="suggest(event.keyCode,this.value);" onkeypress="return noenter(event.keyCode);"/>
+                                        <script src="suggest.js" type="text/javascript"></script>
+                                        <div id="suggcontainer" style="text-align: left; width:100px;  display: none;">
+                                            <div id="suggestions" style="width:204px; border: 1px solid rgb(119, 119, 119); cursor: default; position: absolute; color: rgb(0,0,0); background-color: rgb(255, 255, 255);"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="embedded">
+                            &nbsp; 范围：
+                            <select name="search_area">
+                                <option value="0">标题</option>
+                                <option value="1">简介</option>
+                                                                <option value="3">发布者</option>
+                                <option value="4">IMDb链接</option>
+                                <option value="5">BGMTV链接</option>
+                            </select>
+
+                             匹配模式：
+                            <select name="search_mode" style="width: 60px;">
+                                <option value="0">与</option>
+                                <option value="1">或</option>
+                                <option value="2">准确</option>
+                                <option value="3">非</option>
+                            </select>
+
+                                                    </td>
+                    </tr>
+<tr><td class="embedded" colspan="3">&nbsp;&nbsp;<a href="?search=%E8%9A%81%E4%BA%BA&amp;notnewword=1"><u>蚁人</u></a>&nbsp;&nbsp;<a href="?search=%E5%90%8D%E4%BE%A6%E6%8E%A2%E6%9F%AF%E5%8D%97&amp;notnewword=1"><u>名侦探柯南</u></a>&nbsp;&nbsp;<a href="?search=%E8%BF%9B%E5%87%BB%E7%9A%84%E5%B7%A8%E4%BA%BA&amp;notnewword=1"><u>进击的巨人</u></a>&nbsp;&nbsp;<a href="?search=%E5%BF%AB%E6%8A%8A%E6%88%91%E5%93%A5%E5%B8%A6%E8%B5%B0&amp;notnewword=1"><u>快把我哥带走</u></a>&nbsp;&nbsp;<a href="?search=%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8&amp;notnewword=1"><u>生活大爆炸</u></a>&nbsp;&nbsp;<a href="?search=%E8%A5%BF%E8%99%B9%E5%B8%82%E9%A6%96%E5%AF%8C&amp;notnewword=1"><u>西虹市首富</u></a>&nbsp;&nbsp;<a href="?search=%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&amp;notnewword=1"><u>动物世界</u></a>&nbsp;&nbsp;<a href="?search=%E6%96%97%E7%A0%B4%E8%8B%8D%E7%A9%B9&amp;notnewword=1"><u>斗破苍穹</u></a>&nbsp;&nbsp;<a href="?search=%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E&amp;notnewword=1"><u>我不是药神</u></a>&nbsp;&nbsp;<a href="?search=%E5%A6%82%E6%87%BF%E4%BC%A0&amp;notnewword=1"><u>如懿传</u></a>&nbsp;&nbsp;<a href="?search=%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F&amp;notnewword=1"><u>小偷家族</u></a>&nbsp;&nbsp;<a href="?search=%E7%A2%9F%E4%B8%AD%E8%B0%8D&amp;notnewword=1"><u>碟中谍</u></a>&nbsp;&nbsp;<a href="?search=%E5%BF%83%E5%8A%A8%E7%9A%84%E4%BF%A1%E5%8F%B7&amp;notnewword=1"><u>心动的信号</u></a>&nbsp;&nbsp;<a href="?search=%E6%97%A0%E8%80%BB%E4%B9%8B%E5%BE%92&amp;notnewword=1"><u>无耻之徒</u></a>&nbsp;&nbsp;<a href="?search=MATLAB&amp;notnewword=1"><u>MATLAB</u></a>&nbsp;&nbsp;</td></tr>                </table>
+            </td>
+            <td class="rowfollow" align="center">
+                <input type="submit" class="btn" value="给我搜" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </form>
+<style type="text/css">
+#go:hover{
+    color:#000;
+    border:solid 1px #555;
+}
+</style>
+<p align="center"><font class="gray"><b title="Alt+Pageup或方向键左（←）">&lt;&lt;&nbsp;上一页</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="gray"><b title="Alt+Pagedown或方向键右（→）">下一页&nbsp;&gt;&gt;</b></font>&nbsp;&nbsp;&nbsp;第<input id="goto" type="text" style="width:30px;"/>页&nbsp;&nbsp;&nbsp;<a href="?inclbookmarked=0&amp;pktype=0&amp;incldead=0&amp;spstate=0&amp;search_area=0&amp;search=office%202016&amp;search_mode=0&amp;page=0" id="go" style="display:inline-block;width:45px;background-color:#ddd;border:solid 1px #777;text-decoration:none;" oldhref="?inclbookmarked=0&pktype=0&incldead=0&spstate=0&search_area=0&search=office%202016&search_mode=0&">跳转</a><br /><font class="gray"><b>1&nbsp;-&nbsp;19</b></font></p>
+<p align="center"> <b>高亮的种子是：&nbsp;&nbsp;</b> <a href="?spstate=2" target="_self" title="查看免费种子"><font class='free'><b>免费</b></font></a> | <a href="?spstate=3" target="_self" title="查看两倍上传量种子"><font class='twoup'><b>2x上传</b></font></a> | <a href="?spstate=4" target="_self" title="查看免费且两倍上传种子"><font class='twoupfree'><b>免费&amp;2x上传</b></font></a> | <a href="?spstate=5" target="_self" title="查看50%下载种子"><font class='halfdown'><b>50%下载</b></font></a> | <a href="?spstate=6" target="_self" title="查看50%下载且两倍上传种子"><font class='twouphalfdown'><b>50%下载&amp;2x上传</b></font></a> | <a href="?spstate=7" target="_self" title="查看30%下载种子"><font class='thirtypercent'><b>30%下载</b></font></a><br />下载它们是提高分享率的好方式！</p>
+<p align="center"> <b>带标签的种子是：  </b> <a href="?pktype=1" target="_self" title="查看热门种子"><font class='hot'><b>热门</b></font></a> | <a href="?pktype=2" target="_self" title="查看经典种子"><font class='classic'><b>经典</b></font></a> | <a href="?pktype=3" target="_self" title="查看推荐种子"><font class='recommended'><b>推荐</b></font></a> <br /></p>
+<table class="torrents" cellspacing="0" cellpadding="5" width="100%" style="margin-top:0px"><form id="form_torrent" name="form_torrent" method="post" action="">
+<input id="delete_reason" type="hidden" name="delete_reason" value="">
+<tr >
+<td class="colhead" style="padding: 0px">类型</td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=1&amp;type=asc">标题</a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=3&amp;type=desc"><img class="comments" src="pic/trans.gif" alt="comments" title="评论数" /></a></td>
+
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=4&amp;type=desc"><img class="time" src="pic/trans.gif" alt="time" title="存活时间" /></a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=5&amp;type=desc"><img class="size" src="pic/trans.gif" alt="size" title="大小" /></a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=7&amp;type=desc"><img class="seeders" src="pic/trans.gif" alt="seeders" title="种子数" /></a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=8&amp;type=desc"><img class="leechers" src="pic/trans.gif" alt="leechers" title="下载数" /></a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=6&amp;type=desc"><img class="snatched" src="pic/trans.gif" alt="snatched" title="完成数" /></a></td>
+<td class="colhead"><a href="?secocat=&amp;cat=&amp;incldead=0&amp;spstate=0&amp;inclbookmarked=0&amp;search=office 2016&amp;search_area=0&amp;search_mode=0&amp;sort=9&amp;type=desc">发布者</a></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=408"><img class="c_movies" src="pic/cattrans.gif" alt="电影" title="电影" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[办公室圣诞派对/今个圣诞无银用(港) / 圣诞搞轰趴(台)][Office Christmas Party 2016 720p BluRay DD5.1 x264-DON][喜剧][美国]"  href="details.php?id=270614&amp;hit=1"><b>[办公室圣诞派对/今个圣诞无银用(港) / 圣诞搞轰趴(台)][Office Christmas Party 2016 720p BluRay DD5.1 x264-DON][喜剧][美国]</b></a><br />杰森·贝特曼 、奥立薇娅·玛恩 、 T·J·米勒、詹妮弗·安妮斯顿等 <span class="imdbRatingPlugin" data-user="ur43939217" data-title="tt1711525" data-style="p4"><a href="http://www.imdb.com/title/tt1711525/?ref_=plg_rt_1"><img src="pic/imdb_31x14.png" /></a></span></td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=270614"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark0"  href="javascript: bookmark(270614,0);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><a href="comment.php?action=add&amp;pid=270614&amp;type=torrent" title="添加评论">0</a></td><td class="rowfollow nowrap"><span title="2018-09-30 18:09:16">2天<br />23时</span></td><td class="rowfollow">5.75<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=270614&amp;hit=1&amp;dllist=1#seeders">6</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=270614"><b>24</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office Professional Plus 2016 64Bit ChnSimp][Professional Plus 2016 64Bit][官方简体][光盘镜像]"  href="details.php?id=264085&amp;hit=1"><b>[Windows][办公软件][Office Professional Plus 2016 64Bit ChnSimp][Professional Plus 2016 64Bit][官方简体][光盘镜像]</b></a> </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=264085"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark1"  href="javascript: bookmark(264085,1);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=264085&amp;hit=1&amp;cmtpage=1#startcomments" >8</a></b></td><td class="rowfollow nowrap"><span title="2018-06-01 11:10:16">4月<br />4天</span></td><td class="rowfollow">2.31<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=264085&amp;hit=1&amp;dllist=1#seeders">145</a></b></td>
+<td class="rowfollow"><b><a href="details.php?id=264085&amp;hit=1&amp;dllist=1#leechers">11</a></b></td>
+<td class="rowfollow"><a href="viewsnatches.php?id=264085"><b>1,532</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=277489" class='CrazyUser_Name'><b>DaweiX</b></a></span><br /><a href='badges.php?action=owners&bid=4174' target=_blank title=狂三><span class='boot-label-black' title='点击显示详情'>狂三</span></a></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[MacOSX][办公软件][Microsoft Office 2016 for Mac][16.11.0][多国语言][安装包]"  href="details.php?id=258335&amp;hit=1"><b>[MacOSX][办公软件][Microsoft Office 2016 for Mac][16.11.0][多国语言][安装包]</b></a> </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=258335"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark2"  href="javascript: bookmark(258335,2);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=258335&amp;hit=1&amp;cmtpage=1#startcomments" >7</a></b></td><td class="rowfollow nowrap"><span title="2018-03-20 18:27:39">6月<br />16天</span></td><td class="rowfollow">1.64<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=258335&amp;hit=1&amp;dllist=1#seeders">32</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=258335"><b>718</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=408"><img class="c_movies" src="pic/cattrans.gif" alt="电影" title="电影" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[办公室圣诞派对][Office.Christmas.Party.2016.BD.MiniSD-TLF][喜剧][北美]"  href="details.php?id=254410&amp;hit=1"><b>[办公室圣诞派对][Office.Christmas.Party.2016.BD.MiniSD-TLF][喜剧][北美]</b></a><br />临近圣诞，古灵精怪的米勒说服老派的詹妮弗·安妮斯顿，希望通过派对鼓舞士气，不想派对失控，意外频发 <span class="imdbRatingPlugin" data-user="ur43939217" data-title="tt1711525" data-style="p4"><a href="http://www.imdb.com/title/tt1711525/?ref_=plg_rt_1"><img src="pic/imdb_31x14.png" /></a></span></td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=254410"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark3"  href="javascript: bookmark(254410,3);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=254410&amp;hit=1&amp;cmtpage=1#startcomments" >1</a></b></td><td class="rowfollow nowrap"><span title="2018-01-07 08:34:52">8月<br />29天</span></td><td class="rowfollow">1.04<br />GB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=254410"><b>26</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=407"><img class="c_docs" src="pic/cattrans.gif" alt="资料" title="资料" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[学习教程][Lynda office 2016 教程][Lynda Microsoft Office 2016 Essential Training][MP4][2015.09.22]"  href="details.php?id=252743&amp;hit=1"><b>[学习教程][Lynda office 2016 教程][Lynda Microsoft Office 2016 Essential Training][MP4][2015.09.22]</b></a><br />Lynda 出品 office 2016 教程 Word 2016 Excel 2016 Access 2016 OneNote 2016 Outlook 2016 Office 201.. </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=252743"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark4"  href="javascript: bookmark(252743,4);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=252743&amp;hit=1&amp;cmtpage=1#startcomments" >2</a></b></td><td class="rowfollow nowrap"><span title="2017-12-16 20:21:33">9月<br />20天</span></td><td class="rowfollow">5.41<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=252743&amp;hit=1&amp;dllist=1#seeders">5</a></b></td>
+<td class="rowfollow"><b><a href="details.php?id=252743&amp;hit=1&amp;dllist=1#leechers">3</a></b></td>
+<td class="rowfollow"><a href="viewsnatches.php?id=252743"><b>177</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=200432" class='UltimateUser_Name'><b>hustlyt712</b></a></span><br /><a href='badges.php?action=owners&bid=3359' target=_blank title=华中科技大学勋章><span class='boot-label-gold' title='点击显示详情'>华中大</span></a></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[MacOSX][办公软件][Microsoft Office for Mac 2016][15.33.0 (170409)][多国语言][安装包]"  href="details.php?id=233264&amp;hit=1"><b>[MacOSX][办公软件][Microsoft Office for Mac 2016][15.33.0 (170409)][多国语言][安装包]</b></a> </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=233264"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark5"  href="javascript: bookmark(233264,5);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=233264&amp;hit=1&amp;cmtpage=1#startcomments" >22</a></b></td><td class="rowfollow nowrap"><span title="2017-04-15 23:14:15">1年<br />5月</span></td><td class="rowfollow">1.53<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=233264&amp;hit=1&amp;dllist=1#seeders">23</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=233264"><b>1,687</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=190003" class='PowerUser_Name'><b>Adrian</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=408"><img class="c_movies" src="pic/cattrans.gif" alt="电影" title="电影" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[办公室圣诞派对/今个圣诞无银用(港) / 圣诞搞轰趴(台)][Office Christmas Party 2016 1080p BluRay x264 DTS-WiKi][喜剧][北美]"  href="details.php?id=232186&amp;hit=1"><b>[办公室圣诞派对/今个圣诞无银用(港) / 圣诞搞轰趴(台)][Office Christmas Party 2016 1080p BluRay x264 DTS-WiKi][喜剧][北美]</b></a><br />杰森·贝特曼 、奥立薇娅·玛恩 、 T·J·米勒、詹妮弗·安妮斯顿等 <span class="imdbRatingPlugin" data-user="ur43939217" data-title="tt1711525" data-style="p4"><a href="http://www.imdb.com/title/tt1711525/?ref_=plg_rt_1"><img src="pic/imdb_31x14.png" /></a></span></td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=232186"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark6"  href="javascript: bookmark(232186,6);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><a href="comment.php?action=add&amp;pid=232186&amp;type=torrent" title="添加评论">0</a></td><td class="rowfollow nowrap"><span title="2017-04-04 09:51:31">1年<br />6月</span></td><td class="rowfollow">9.30<br />GB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=232186"><b>19</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=197228" class='Uploader_Name'><b>tde13</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=408"><img class="c_movies" src="pic/cattrans.gif" alt="电影" title="电影" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[办公室圣诞派对][Office.Christmas.Party.2016.720p.BluRay.x264-DRONES][喜剧][北美]"  href="details.php?id=230263&amp;hit=1"><b>[办公室圣诞派对][Office.Christmas.Party.2016.720p.BluRay.x264-DRONES][喜剧][北美]</b></a><br />办公室圣诞派对/今个圣诞无银用(港)/圣诞搞轰趴(台) <span class="imdbRatingPlugin" data-user="ur43939217" data-title="tt1711525" data-style="p4"><a href="http://www.imdb.com/title/tt1711525/?ref_=plg_rt_1"><img src="pic/imdb_31x14.png" /></a></span></td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=230263"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark7"  href="javascript: bookmark(230263,7);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><a href="comment.php?action=add&amp;pid=230263&amp;type=torrent" title="添加评论">0</a></td><td class="rowfollow nowrap"><span title="2017-03-13 14:03:23">1年<br />6月</span></td><td class="rowfollow">5.46<br />GB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=230263"><b>88</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=187746" class='Uploader_Name'><b>zhoubo13</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=407"><img class="c_docs" src="pic/cattrans.gif" alt="资料" title="资料" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[生活日常][NBC夜间新闻][NBC Nightly News][MP4][2016.11.30]"  href="details.php?id=220266&amp;hit=1"><b>[生活日常][NBC夜间新闻][NBC Nightly News][MP4][2016.11.30]</b></a><br />In Wednesday night's broadcast: Wildfires, tornadoes strike across South, no charges for Char.. </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=220266"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark8"  href="javascript: bookmark(220266,8);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><a href="comment.php?action=add&amp;pid=220266&amp;type=torrent" title="添加评论">0</a></td><td class="rowfollow nowrap"><span title="2016-12-01 12:43:54">1年<br />10月</span></td><td class="rowfollow">121.21<br />MB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=220266"><b>26</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=407"><img class="c_docs" src="pic/cattrans.gif" alt="资料" title="资料" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[生活日常][NBC晚间新闻][NBC Nightly News][MP4][2016.11.10]"  href="details.php?id=218500&amp;hit=1"><b>[生活日常][NBC晚间新闻][NBC Nightly News][MP4][2016.11.10]</b></a><br />In Thursday night's broadcast: Obama and Trump meet for the first time, what a Trump administ.. </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=218500"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark9"  href="javascript: bookmark(218500,9);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><a href="comment.php?action=add&amp;pid=218500&amp;type=torrent" title="添加评论">0</a></td><td class="rowfollow nowrap"><span title="2016-11-11 13:45:51">1年<br />11月</span></td><td class="rowfollow">176.58<br />MB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=218500"><b>34</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[MacOSX][办公软件][Microsoft Office 2016][15.14 VL][官方简体][光盘镜像]"  href="details.php?id=194512&amp;hit=1"><b>[MacOSX][办公软件][Microsoft Office 2016][15.14 VL][官方简体][光盘镜像]</b></a><br />免破解可升级 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=194512"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark10"  href="javascript: bookmark(194512,10);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=194512&amp;hit=1&amp;cmtpage=1#startcomments" >26</a></b></td><td class="rowfollow nowrap"><span title="2015-12-05 14:28:14">2年<br />10月</span></td><td class="rowfollow">1.14<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=194512&amp;hit=1&amp;dllist=1#seeders">23</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=194512"><b>4,374</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=169543" class='ExtremeUser_Name'><b>bread520</b></a></span><br /><a href='badges.php?action=owners&bid=2211' target=_blank title=哆啦A梦><span class='boot-label-blue' title='点击显示详情'>哆啦</span></a></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office365家庭高级版][Office 365 Home Premium Retail][16.0.4266.1003][官方简体][光盘镜像]"  href="details.php?id=190465&amp;hit=1"><b>[Windows][办公软件][Office365家庭高级版][Office 365 Home Premium Retail][16.0.4266.1003][官方简体][光盘镜像]</b></a><br />Office 365 家庭（高级）版（2016版本）离线安装包 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=190465"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark11"  href="javascript: bookmark(190465,11);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=190465&amp;hit=1&amp;cmtpage=1#startcomments" >4</a></b></td><td class="rowfollow nowrap"><span title="2015-10-21 16:37:14">2年<br />11月</span></td><td class="rowfollow">2.41<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=190465&amp;hit=1&amp;dllist=1#seeders">4</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=190465"><b>560</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=143518" class='Uploader_Name'><b>Isler</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office 365 Professional Plus][16.0.4266.1003][官方简体][光盘镜像]"  href="details.php?id=190377&amp;hit=1"><b>[Windows][办公软件][Office 365 Professional Plus][16.0.4266.1003][官方简体][光盘镜像]</b></a><br />Office 365 专业增强版（2016版本）离线安装包 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=190377"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark12"  href="javascript: bookmark(190377,12);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=190377&amp;hit=1&amp;cmtpage=1#startcomments" >14</a></b></td><td class="rowfollow nowrap"><span title="2015-10-20 17:00:31">2年<br />11月</span></td><td class="rowfollow">2.41<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=190377&amp;hit=1&amp;dllist=1#seeders">6</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=190377"><b>352</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=143518" class='Uploader_Name'><b>Isler</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office Professional Plus 2016 x86][官方简体][光盘镜像]"  href="details.php?id=189256&amp;hit=1"><b>[Windows][办公软件][Office Professional Plus 2016 x86][官方简体][光盘镜像]</b></a><br />批量授权版 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=189256"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark13"  href="javascript: bookmark(189256,13);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=189256&amp;hit=1&amp;cmtpage=1#startcomments" >11</a></b></td><td class="rowfollow nowrap"><span title="2015-10-07 17:52:59">2年<br />12月</span></td><td class="rowfollow">940.74<br />MB</td><td class="rowfollow" align="center"><b><a href="details.php?id=189256&amp;hit=1&amp;dllist=1#seeders">18</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=189256"><b>2,114</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office Professional Plus 2016 x64][官方简体][光盘镜像]"  href="details.php?id=189153&amp;hit=1"><b>[Windows][办公软件][Office Professional Plus 2016 x64][官方简体][光盘镜像]</b></a><br />批量授权版 <img height="16px" style="padding-top:4px;" src="pic/seeding.png"/> </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=189153"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark14"  href="javascript: bookmark(189153,14);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=189153&amp;hit=1&amp;cmtpage=1#startcomments" >52</a></b></td><td class="rowfollow nowrap"><span title="2015-10-06 11:00:00">2年<br />12月</span></td><td class="rowfollow">1.05<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=189153&amp;hit=1&amp;dllist=1#seeders">169</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=189153"><b>11,605</b></a></td>
+<td class="rowfollow"><i>匿名</i></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[MacOSX][办公软件][Office Home and Business 2016 for Mac][2016][多国语言][光盘镜像]"  href="details.php?id=188607&amp;hit=1"><b>[MacOSX][办公软件][Office Home and Business 2016 for Mac][2016][多国语言][光盘镜像]</b></a><br />mu_office_home_and_business_2016_for_mac_mac_dvd_7027756.iso </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=188607"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark15"  href="javascript: bookmark(188607,15);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=188607&amp;hit=1&amp;cmtpage=1#startcomments" >1</a></b></td><td class="rowfollow nowrap"><span title="2015-09-29 13:58:28">3年<br />0月</span></td><td class="rowfollow">1.13<br />GB</td><td class="rowfollow"><span class="red">0</span></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=188607"><b>109</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=205785" class='UltimateUser_Name'><b>SunFulong</b></a></span><br /><a href='badges.php?action=owners&bid=3122' target=_blank title=大连东软信息学院><span class='boot-label-blue' title='点击显示详情'>DNUI</span></a></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Microsoft Office Professional Plus][2016 MSDN x86-x64][英文][光盘镜像]"  href="details.php?id=188244&amp;hit=1"><b>[Windows][办公软件][Microsoft Office Professional Plus][2016 MSDN x86-x64][英文][光盘镜像]</b></a><br />用最新版的KMSPico激活，180天以后再次激活即可。 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=188244"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark16"  href="javascript: bookmark(188244,16);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=188244&amp;hit=1&amp;cmtpage=1#startcomments" >6</a></b></td><td class="rowfollow nowrap"><span title="2015-09-25 18:40:15">3年<br />0月</span></td><td class="rowfollow">2.26<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=188244&amp;hit=1&amp;dllist=1#seeders">14</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=188244"><b>1,117</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=2474" class='UltimateUser_Name'><b>bjlulu</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[Windows][办公软件][Office Professional Plus 2016 (x86 and x64)][官方简体][光盘镜像]"  href="details.php?id=187997&amp;hit=1"><b>[Windows][办公软件][Office Professional Plus 2016 (x86 and x64)][官方简体][光盘镜像]</b></a> <b>[<font class='hot'>热门</font>]</b><br />MSDN 零售版 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=187997"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark17"  href="javascript: bookmark(187997,17);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=187997&amp;hit=1&amp;cmtpage=1#startcomments" >52</a></b></td><td class="rowfollow nowrap"><span title="2015-09-23 11:26:47">3年<br />0月</span></td><td class="rowfollow">2.41<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=187997&amp;hit=1&amp;dllist=1#seeders">36</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=187997"><b>3,563</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=143518" class='Uploader_Name'><b>Isler</b></a></span><br /></td>
+</tr>
+<tr class='free_bg'>
+<td class="rowfollow nowrap" valign="middle" style='padding: 0px'><a href="?cat=406"><img class="c_softwares" src="pic/cattrans.gif" alt="软件" title="软件" style="background-image: url(pic/category/chd/scenetorrents/chs/catsprites.png);" /></a></td>
+<td class="rowfollow" width="100%" align="left"><table class="torrentname" width="100%"><tr class='free_bg'><td class="embedded"><a title="[MacOSX][办公软件][Office 2016 for Mac 批量授权][Office 2016 for Mac MLF][15.13.3][多国语言][光盘镜像]"  href="details.php?id=185855&amp;hit=1"><b>[MacOSX][办公软件][Office 2016 for Mac 批量授权][Office 2016 for Mac MLF][15.13.3][多国语言][光盘镜像]</b></a><br />批量授权，无需破解，安装即用。 </td><td width="20" class="embedded" style="text-align: right; " valign="middle"><a href="download.php?id=185855"><img class="download" src="pic/trans.gif" style='padding-bottom: 2px;' alt="download" title="下载本种" /></a><br /><a id="bookmark18"  href="javascript: bookmark(185855,18);" ><img class="delbookmark" src="pic/trans.gif" alt="Unbookmarked" title="收藏" /></a></td>
+</tr></table></td><td class="rowfollow"><b><a href="details.php?id=185855&amp;hit=1&amp;cmtpage=1#startcomments" >20</a></b></td><td class="rowfollow nowrap"><span title="2015-08-29 15:13:51">3年<br />1月</span></td><td class="rowfollow">1.10<br />GB</td><td class="rowfollow" align="center"><b><a href="details.php?id=185855&amp;hit=1&amp;dllist=1#seeders">6</a></b></td>
+<td class="rowfollow">0</td>
+<td class="rowfollow"><a href="viewsnatches.php?id=185855"><b>2,243</b></a></td>
+<td class="rowfollow"><span class="nowrap"><a  href="userdetails.php?id=184883" class='InsaneUser_Name'><b>pklfz</b></a></span><br /><a href='badges.php?action=owners&bid=3358' target=_blank title=林则徐勋章><span class='boot-label-black' title='点击显示详情'>苟利</span></a></td>
+</tr>
+</table><p align="center"> <b>高亮的种子是：&nbsp;&nbsp;</b> <a href="?spstate=2" target="_self" title="查看免费种子"><font class='free'><b>免费</b></font></a> | <a href="?spstate=3" target="_self" title="查看两倍上传量种子"><font class='twoup'><b>2x上传</b></font></a> | <a href="?spstate=4" target="_self" title="查看免费且两倍上传种子"><font class='twoupfree'><b>免费&amp;2x上传</b></font></a> | <a href="?spstate=5" target="_self" title="查看50%下载种子"><font class='halfdown'><b>50%下载</b></font></a> | <a href="?spstate=6" target="_self" title="查看50%下载且两倍上传种子"><font class='twouphalfdown'><b>50%下载&amp;2x上传</b></font></a> | <a href="?spstate=7" target="_self" title="查看30%下载种子"><font class='thirtypercent'><b>30%下载</b></font></a><br />下载它们是提高分享率的好方式！</p>
+<p align="center"><font class="gray"><b>1&nbsp;-&nbsp;19</b></font><br /><font class="gray"><b title="Alt+Pageup或方向键左（←）">&lt;&lt;&nbsp;上一页</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="gray"><b title="Alt+Pagedown或方向键右（→）">下一页&nbsp;&gt;&gt;</b></font>&nbsp;&nbsp;&nbsp;第<input id="goto" type="text" style="width:30px;"/>页&nbsp;&nbsp;&nbsp;<a href="?inclbookmarked=0&amp;pktype=0&amp;incldead=0&amp;spstate=0&amp;search_area=0&amp;search=office%202016&amp;search_mode=0&amp;page=0" id="go" style="display:inline-block;width:45px;background-color:#ddd;border:solid 1px #777;text-decoration:none;" oldhref="?inclbookmarked=0&pktype=0&incldead=0&spstate=0&search_area=0&search=office%202016&search_mode=0&">跳转</a></p>
+</td></tr></table></td></tr></table><div id="footer"><div style="margin-top: 10px; margin-bottom: 30px;" align="center"> (c)  <a href="https://bt.byr.cn" target="_self">BYRBT</a> 2012-2018 Powered by <a href="aboutnexus.php">NexusPHP</a><br /><br />[page created in <b> 0.054625 </b> sec with <b>15</b> db queries, <b>58</b> reads, <b>10</b> writes and <b>0</b> deletes of memcached and <b>2.00 MB</b> ram]</div>
+<div style="display: none;" id="lightbox" class="lightbox"></div><div style="display: none;" id="curtain" class="curtain"></div>
+<script type="text/javascript">
+//<![CDATA[
+var maxpage=0;
+var currentpage=0;
+//]]>
+</script>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97811992-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body></html><script>
+$("input#goto").each(function(){
+    $(this).change(function(){
+        $(this).next().attr('href',$(this).next().attr("oldhref")+"page="+($(this).val()-1));
+    });
+});
+</script>
+
